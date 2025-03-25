@@ -1,13 +1,14 @@
-module.exports = {
-  root: true,
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
-  rules: {
+import { defineConfig } from "eslint/config";
+import globals from "globals";
+import js from "@eslint/js";
+import tseslint from "typescript-eslint";
+
+
+export default defineConfig([
+  { files: ["**/*.{js,mjs,cjs,ts}"] },
+  { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
+  { files: ["**/*.{js,mjs,cjs,ts}"], languageOptions: { globals: globals.browser } },
+  { files: ["**/*.{js,mjs,cjs,ts}"], plugins: { js },rules: {
     // Erro ao usar `console.log`
     'no-console': 'warn',
 
@@ -40,5 +41,6 @@ module.exports = {
 
     // Garante que as chaves fiquem no mesmo padrão
     'curly': 'error'
-  }
-};
+  }, extends: ["js/recommended"] },
+  tseslint.configs.recommended,
+]);

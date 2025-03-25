@@ -1,6 +1,4 @@
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  testMatch: ['**/*.test.ts'],
-  moduleFileExtensions: ['ts', 'js', 'json'],
-};
+export const preset = 'ts-jest';
+export const testEnvironment = 'node';
+export const testMatch = ['**/*.test.ts'];
+export const moduleFileExtensions = ['ts', 'js', 'json'];
