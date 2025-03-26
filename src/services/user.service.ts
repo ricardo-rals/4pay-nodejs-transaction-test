@@ -30,13 +30,37 @@ export class UserService implements IUserService {
     }
   }
 
-  getUser(id: string): Promise<IUser> | undefined {
-    throw new Error('Method not implemented.');
+  async deposit(id: string, amount: number): Promise<IUser> {
+    const release = await this.mutex.acquire();
+    try {
+      const data = await readData();
+      const userIndex = data.users.findIndex((user) => user.id === id);
+      if (userIndex === -1) {
+        throw new Error('User not found');
+      }
+      const user = data.users[userIndex];
+      const newBalance = user.balance + amount;
+      if (newBalance > Number.MAX_SAFE_INTEGER) {
+        throw new Error('Deposit amount exceeds the maximum allowed');
+      }
+      user.balance = newBalance;
+      user.transactions.push({
+        id: uuidv4(),
+        type: 'deposit',
+        amount,
+        date: new Date().toISOString()
+      });
+      await writeData(data);
+      return user;
+    }finally {
+      release();
+    }
   }
-  deposit(id: string, amount: number): Promise<IUser> {
-    throw new Error('Method not implemented.');
-  }
+
   withdraw(id: string, amount: number): Promise<IUser> {
+    throw new Error('Method not implemented.');
+  }
+  getUser(id: string): Promise<IUser> | undefined {
     throw new Error('Method not implemented.');
   }
   getStatement(id: string): Promise<IUser['transactions']> {

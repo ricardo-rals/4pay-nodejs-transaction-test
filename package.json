@@ -9,6 +9,7 @@
     "dev": "nodemon src/server.ts"
   },
   "dependencies": {
+    "4pay-nodejs-transaction-test": "file:",
     "async-mutex": "^0.5.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
