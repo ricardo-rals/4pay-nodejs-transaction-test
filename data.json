@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": "d1a2c7ac-7f50-4c04-add0-6089a7b29a7b",
+      "name": "Ricardo Augusto",
+      "cpf": "859.670.905-33",
+      "balance": 0.75,
+      "transactions": [
+        {
+          "id": "b8125ebf-5059-4865-9bb5-6212b5b8275b",
+          "type": "deposit",
+          "amount": 150.75,
+          "date": "2025-03-26T14:28:30.883Z"
+        },
+        {
+          "id": "55b9c006-4b27-47dc-85a1-fd6c71b8d9a4",
+          "type": "deposit",
+          "amount": 200,
+          "date": "2025-03-26T14:28:35.909Z"
+        },
+        {
+          "id": "f904e149-d028-4ac8-a3f4-7f9e114fc1c5",
+          "type": "withdraw",
+          "amount": 350,
+          "date": "2025-03-26T14:28:55.150Z"
+        }
+      ]
+    },
+    {
+      "id": "6480a670-b966-40e8-bb37-02c4baaf8e0e",
+      "name": "Marcos",
+      "cpf": "252.099.839-35",
+      "balance": 996150,
+      "transactions": [
+        {
+          "id": "7809dbb0-52ef-4c93-a8c5-861fd241928a",
+          "type": "deposit",
+          "amount": 1000,
+          "date": "2025-03-26T14:29:42.033Z"
+        },
+        {
+          "id": "500aafe3-092f-4ecc-a322-08be60c5de0f",
+          "type": "deposit",
+          "amount": 500,
+          "date": "2025-03-26T14:29:55.650Z"
+        },
+        {
+          "id": "35870e83-8d8b-4999-aadd-ce55478d6199",
+          "type": "withdraw",
+          "amount": 350,
+          "date": "2025-03-26T14:30:06.753Z"
+        },
+        {
+          "id": "27c5ba91-6330-450f-baf1-102a9badad4b",
+          "type": "deposit",
+          "amount": 995000,
+          "date": "2025-03-26T14:31:22.412Z"
+        }
+      ]
+    }
+  ]
+}
