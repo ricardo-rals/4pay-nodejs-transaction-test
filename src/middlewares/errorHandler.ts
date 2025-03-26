@@ -17,4 +17,5 @@ export const errorHandler: ErrorRequestHandler = (err: Error | ZodError, req: Re
       message: 'Internal server error',
     });
   }
+
 };
